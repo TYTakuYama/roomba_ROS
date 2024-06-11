@@ -147,7 +147,7 @@ angular.z (+)     Rotate counter-clockwise (rad/s)
           (-)     Rotate clockwise (rad/s)
 ```
 
-![Controlling a Roomba with cmd](img/roomba1.png)
+![Controlling a Roomba with cmd](img/1.png)
 
 #### Velocity limits
 
