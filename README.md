@@ -180,3 +180,23 @@ python3 ps4_talk.py
 ```
 
 ![Controlling a Roomba with Topic](img/Topic.png)
+
+```bash
+#!/bin/bash
+
+# ROSワークスペースに移動
+cd /path/to/roomba_ws
+
+# ROS環境をセットアップ
+source devel/setup.bash
+
+# create_bringupノードを起動
+roslaunch create_bringup create_2.launch &
+
+# rosbridge_serverを起動
+roslaunch rosbridge_server rosbridge_websocket.launch &
+
+# Pythonスクリプトを実行
+python3 /home/username/moongo4.py &
+
+```
