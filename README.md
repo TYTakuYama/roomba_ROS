@@ -185,19 +185,19 @@ python3 ps4_talk.py
 ```bash
 #!/bin/bash
 
-# ROSワークスペースに移動
+# work space
 cd /path/to/roomba_ws
 
-# ROS環境をセットアップ
+# ROS set up
 source devel/setup.bash
 
-# create_bringupノードを起動
+# create_bringup node start
 roslaunch create_bringup create_2.launch &
 
-# rosbridge_serverを起動
+# rosbridge_server start
 roslaunch rosbridge_server rosbridge_websocket.launch &
 
-# Pythonスクリプトを実行
+# Python script start
 python3 /home/username/moongo4.py &
 
 ```
