@@ -181,6 +181,7 @@ python3 ps4_talk.py
 
 ![Controlling a Roomba with Topic](img/Topic.png)
 
+#### It is recommended to use cron to execute the following as a shell script when the Raspberry Pi starts up.
 ```bash
 #!/bin/bash
 
