@@ -23,7 +23,35 @@
 #### Prerequisites
 
 * Internet connection
+  ```bash
+  sudo vim /etc/netplan/<number>-netcfg.yaml
+    ----------------------
+    network:
+    version: 2
+    ethernets:
+        eth0:
+          dhcp4: true
+    ----------------------
+  
+  sudo netplan apply
+  ip addr show eth0
+  ```
 * [ROS](http://wiki.ros.org/ROS/Installation)(noetic)
+    raspberry pi 3modelB
+    ``` bash
+    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+    sudo apt update
+    sudo apt install ros-noetic-ros-base
+    echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+    source ~/.bashrc
+    sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
+    sudo apt install python3-rosdep python3-catkin-tools -y
+    sudo rosdep init
+    rosdep update
+    ```
+
 * Noetic only supports Python3
 Ubuntu packages: `python3-rosdep`, `python3-catkin-tools`
 
