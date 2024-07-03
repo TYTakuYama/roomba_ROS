@@ -1,0 +1,42 @@
+sudo nano /etc/netplan/<number>-netcfg.yaml
+----------------------
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+----------------------
+sudo netplan apply
+ip addr show eth0
+
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install ros-noetic-ros-base
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
+sudo apt install python3-rosdep python3-catkin-tools -y
+sudo rosdep init
+rosdep update
+
+
+sudo apt update
+sudo apt install bluetooth bluez bluez-tools rfkill
+
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
+
+sudo rfkill unblock bluetooth
+
+bluetoothctl
+devices
+scan on
+pair XX:XX:XX:XX:XX:XX
+trust XX:XX:XX:XX:XX:XX
+disconnect
+
+sudo mount /dev/sda1 /mnt/usb
+sudo umount /mnt/usb
