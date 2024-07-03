@@ -1,0 +1,4 @@
+sudo apt-get install ros-melodic-rosbridge-suite
+sudo apt-get install ros-melodic-roswww
+roslaunch rosbridge_server rosbridge_websocket.launch
+roslaunch roswww roswww.launch
