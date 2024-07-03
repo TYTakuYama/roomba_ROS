@@ -211,6 +211,7 @@ python3 ps4_talk.py
 ![Controlling a Roomba with Topic](img/Topic.png)
 
 #### 以下のスクリプトをシェルスクリプトとしてRaspberry Piの起動時に実行するためにcronを使用することを推奨します。
+実行失敗 ![](https://github.com/autonomylab/create_robot/workflows/Continuous%20Integration/badge.svg?branch=iron)
 ```bash
 #!/bin/bash
 
